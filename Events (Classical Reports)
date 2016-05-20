@@ -1,0 +1,55 @@
+Events in Classical Reports
+
+Classical Reports are basic type of reports, where not much functionality is given to the user. 
+ABAP language is an event-driven language which means it is executed based on different events and not line by line.
+Below are some events in classical reporting :-
+
+INITIALIZATION
+This event is triggered before the selection screen is called.
+This event is used to pass some initial values to the variables, set default values.
+It is basically used with Select-Options , to pass some initial values. 
+Example:- 
+
+INITIALIZATION.
+S_Date-low = sy-datum.    "set the lower limit of the range to the system's date
+append s_date. 
+
+       2. At Selection Screen
+
+
+This event is used to validate more than one fields on the selection screen.
+Validating is essential to stop the program flow at the very moment where an error occurs i.e an invalid value is entered. 
+Syntax:- AT SELECTION_SCREEN.
+
+       3. At Selection Screen On
+
+This event is used to validate only a field provided in the syntax. 
+Whenever an invalid value is entered and executed, the corresponding field gets highlighted and rest of the fields are disabled.
+Syntax:- AT SELECTION-SCREEN ON <parameter_name>.
+
+      4. Start of Selection
+
+
+The actual selection logic is written under the start of selection event.
+Syntax:- START-OF-SELECTION.
+
+      5. Top Of Page
+
+
+To print heading on every page in the report.
+Syntax:- TOP-OF-PAGE.
+
+     6. End Of Page
+
+
+To print footer on every page in the report.
+Syntax:- END-OF-PAGE.
+
+     7. End of Selection
+
+
+The END-OF-SELECTION event is triggered in type executable programs once the logical database has finished reading all data and before the list processor is started.
+It tells the server that all the database reading is completed and no further reading is going to take place.
+Syntax:- END-OF-SELECTION.
+
+            
